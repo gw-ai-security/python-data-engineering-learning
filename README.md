@@ -1,12 +1,12 @@
 # Python Data Engineering Learning
 
-Hands-on learning repository for building practical Python skills for Data Engineering.
+Hands-on learning repository for building reliable Python skills for Data Engineering.
 
-The goal is not to collect Python syntax or finish courses for their own sake. The goal is to build enough Python engineering competence to independently implement, test, debug, explain, and later operate a reliable local data pipeline.
+This repository is not designed around course completion. It is designed around demonstrable engineering competence: understanding, implementing, debugging, testing, explaining, and integrating Python into a reliable local data pipeline.
 
-## Target Outcome
+## Target outcome
 
-This learning phase culminates in an end-to-end local pipeline:
+The Python phase culminates in an independently built pipeline:
 
 ```text
 Public REST API
@@ -26,213 +26,164 @@ Data Quality
 Logging + Tests
 ```
 
-The project intentionally starts without Airflow, dbt, Docker, AWS, Spark, Databricks, or Kubernetes. The Python pipeline itself must first be understandable, reproducible, testable, and debuggable.
+The project intentionally does **not** start with Airflow, dbt, AWS, Spark, Databricks or Kubernetes. The local Python system must first be understandable, reproducible, testable and debuggable.
 
-## Learning Method
+## Learning principles
 
-The repository follows a practice-first workflow:
+The working model is:
 
 ```text
-Understand
-→ Recall
-→ Implement
-→ Break
-→ Debug
-→ Test
-→ Explain
-→ Integrate
-→ Document
-→ Prove
+UNDERSTAND
+→ RECALL
+→ IMPLEMENT
+→ BREAK
+→ DEBUG
+→ TEST
+→ EXPLAIN
+→ INTEGRATE
+→ DOCUMENT
+→ PROVE
 ```
 
-Core rules:
+Key rules:
 
-- approximately 20% learning material and 80% coding;
-- exercises are attempted before AI assistance;
-- AI is used primarily for review, feedback, edge cases, refactoring, and explanation;
-- debugging is treated as a core engineering skill;
-- readable and maintainable Python is preferred over unnecessary complexity;
-- every topic is connected to a Data Engineering use case.
+- one primary technical learning goal at a time;
+- roughly 20% theory / 80% active work;
+- Brain First → AI Second → Brain Again;
+- debugging is a core skill, not a side effect;
+- concept first, tool second;
+- Data Engineering transfer for every Python topic;
+- separation of concerns in pipeline code;
+- GitHub evidence matters more than course certificates.
 
-## Current Phase
-
-**Learning Block 0 — Setup, workflow, and baseline**
-
-Current objectives:
-
-- execute Python from the terminal;
-- work with `.py` files in VS Code;
-- understand system Python vs. project environment;
-- create and activate a virtual environment;
-- manage dependencies with `pip` and `requirements.txt`;
-- use Git and GitHub as part of the normal workflow;
-- complete an initial no-AI baseline challenge.
-
-### Learning Block 0 Gate
-
-The block is complete when I can independently:
-
-- create and activate a virtual environment;
-- install a package into the project environment;
-- generate/update `requirements.txt`;
-- execute a Python script from the terminal;
-- create a Git commit;
-- explain why a virtual environment is used.
-
-## Repository Structure
+## Repository structure
 
 ```text
 python-data-engineering-learning/
-├── .vscode/          # Minimal VS Code workspace configuration
-├── exercises/        # Focused Python exercises and no-AI practice
-├── mini_projects/    # Applied Data Engineering exercises
-├── notes/            # Concise learning notes and debugging observations
-├── tests/            # Automated tests introduced as the roadmap progresses
-├── .editorconfig     # Basic cross-editor formatting rules
-├── .gitignore
-├── LICENSE
 ├── README.md
-└── requirements.txt
+├── docs/
+│   ├── COURSE_STRUCTURE.md
+│   ├── LEARNING_METHOD.md
+│   └── SOURCE_MAP.md
+├── learnings/
+│   ├── README.md
+│   ├── 00_setup_baseline.md
+│   ├── 01_execution_variables_types_strings_numbers.md
+│   ├── 02_booleans_operators_conditions_loops.md
+│   ├── 03_data_structures.md
+│   ├── 04_functions_modules_code_structure.md
+│   ├── 05_errors_exceptions_datetime_regex_debugging.md
+│   ├── 06_files_pathlib_json_csv_config.md
+│   ├── 07_http_rest_api_ingestion.md
+│   ├── 08_pandas_data_engineering.md
+│   ├── 09_data_quality_schema_validation.md
+│   ├── 10_postgresql_sql_parquet.md
+│   ├── 11_logging_typing_testing_configuration.md
+│   └── 12_mini_pipeline_rehearsal.md
+├── exercises/
+├── mini_projects/
+├── notes/
+├── tests/
+├── requirements.txt
+├── .editorconfig
+├── .gitignore
+└── .vscode/
 ```
 
-The structure will evolve only when a learning block or project creates a real need for additional folders.
+### What belongs where?
 
-## Learning Path
+- **`learnings/`** – concise theory, mental models, examples, code snippets and recall questions for every learning block.
+- **`exercises/`** – code written during focused practice and no-AI gates.
+- **`mini_projects/`** – small integrated Data Engineering exercises.
+- **`tests/`** – automated tests as testing becomes part of the learning path.
+- **`notes/`** – personal confusion questions, debugging observations and short reflections.
+- **`docs/`** – course structure, learning method and source mapping.
 
-1. Setup, workflow, and baseline
-2. Python execution, variables, types, strings, and numbers
-3. Booleans, operators, conditions, and loops
-4. Lists, tuples, sets, and dictionaries
-5. Functions, modules, and packages
-6. Files, CSV, JSON, and `pathlib`
-7. Exceptions and defensive programming
-8. HTTP and REST APIs
-9. pandas for local transformations
-10. Data quality and schema validation
-11. PostgreSQL, SQL from Python, and Parquet
-12. Logging, typing, basic testing, and configuration
-13. Reliable local Data Engineering pipeline
+## Learning blocks
+
+| Block | Focus |
+|---|---|
+| 0 | Setup, workflow and baseline |
+| 1 | Python execution, variables, types, strings, numbers |
+| 2 | Booleans, operators, conditions, loops |
+| 3 | Lists, tuples, sets, dictionaries |
+| 4 | Functions, modules, comprehensions, code structure |
+| 5 | Errors, exceptions, datetime, regex, debugging |
+| 6 | Files, pathlib, JSON, CSV, packages, configuration |
+| 7 | HTTP and REST API ingestion |
+| 8 | pandas for Data Engineering |
+| 9 | Data Quality and schema validation |
+| 10 | PostgreSQL, SQL from Python and Parquet |
+| 11 | Logging, typing, basic testing, configuration |
+| 12 | Mini-pipeline rehearsal / no-tutorial gate |
+
+See [`docs/COURSE_STRUCTURE.md`](docs/COURSE_STRUCTURE.md) for the full sequence and [`learnings/`](learnings/) for readable theory notes.
 
 ## Definition of Done
 
-A skill is not considered learned because it appeared in a course.
+A topic is not considered learned because it appeared in a video or because code ran once.
 
-**1. Explain**  
-Describe the purpose and behavior of the concept.
+**Level 1 – Explain**  
+Explain the purpose and basic mechanics.
 
-**2. Implement**  
+**Level 2 – Implement**  
 Solve a typical task without a step-by-step tutorial.
 
-**3. Debug**  
-Systematically locate and fix typical failures.
+**Level 3 – Debug**  
+Locate and fix common failures systematically.
 
-**4. Reason about / operate**  
-Explain assumptions, trade-offs, failure modes, security, logging, tests, and operational consequences where relevant.
+**Level 4 – Reason / Operate**  
+Explain trade-offs, failure modes, security, tests, logging and operational consequences.
 
-For Python fundamentals, the target during this phase is primarily levels 2–3.
+For this Python phase, fundamentals and the pipeline core should reach mainly Levels 2–3.
 
-## Debugging Workflow
+## Debugging workflow
 
 ```text
-Observe
-→ Hypothesize
-→ Isolate
-→ Test
-→ Fix
-→ Verify
-→ Prevent
+OBSERVE
+→ HYPOTHESIZE
+→ ISOLATE
+→ TEST
+→ FIX
+→ VERIFY
+→ PREVENT
 ```
 
-Relevant errors are kept as learning evidence when they reveal a useful failure mode or lead to a regression test.
+For relevant bugs, record expected behavior, actual behavior, hypothesis, minimal reproduction, fix and verification. Add a regression test where useful.
 
-## Local Setup — Windows / VS Code
+## Current status
 
-### 1. Clone the repository
+- Python 3.14 environment established with a project-local `.venv`.
+- Setup and baseline exercises completed.
+- Next phase: Block 1 – Python execution, variables, types, strings and numbers.
 
-```powershell
-git clone https://github.com/gw-ai-security/python-data-engineering-learning.git
-cd python-data-engineering-learning
+## Final project
+
+The final Python-phase project is the **Reliable Local Data Pipeline**:
+
+```text
+API → Python → Validation → PostgreSQL + Parquet → Data Quality → Logging → Tests
 ```
 
-### 2. Create the project environment
+Before implementation, the project must define the problem, consumer, source, grain, valid record rules, business rules, expected failures and Definition of Done.
 
-```powershell
-py -m venv .venv
-```
+## Scope discipline
 
-### 3. Activate it in PowerShell
+The following are deliberately deferred until the Python pipeline itself is reliable:
 
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-### 4. Verify the interpreter and pip
-
-```powershell
-python --version
-python -m pip --version
-```
-
-The `pip` path should point into this repository's `.venv` directory.
-
-### 5. Install project dependencies
-
-At the start of Learning Block 0 there are intentionally no runtime dependencies. When dependencies are introduced:
-
-```powershell
-python -m pip install -r requirements.txt
-```
-
-The virtual environment itself is local-only and is excluded by `.gitignore`.
-
-## Baseline Challenge
-
-The first diagnostic challenge is completed without AI-generated solution code:
-
-1. create five records as dictionaries;
-2. identify invalid records;
-3. filter valid records;
-4. calculate the sum of one numeric field;
-5. print the result as readable text.
-
-The challenge is a diagnostic baseline, not an exam. Gaps become inputs for the following learning blocks.
-
-## Final Python Phase Project
-
-The final project of this phase is expected to demonstrate:
-
-- REST API extraction;
-- raw JSON persistence;
-- validation and standardization;
-- business transformations;
-- PostgreSQL loading;
-- Parquet output;
-- data-quality checks;
-- controlled error handling;
-- logging;
-- basic automated tests;
-- reproducible execution;
-- technical documentation.
-
-## Scope Boundaries
-
-The following technologies are deliberately deferred until the local Python pipeline is reliable:
-
-- dbt;
-- Airflow;
-- Docker;
-- CI/CD;
-- AWS;
-- PySpark;
-- Databricks.
-
-This keeps the current learning bottleneck explicit: practical Python, debugging, testing, and reliable pipeline logic.
+- dbt
+- Airflow
+- Docker / CI/CD depth
+- AWS
+- PySpark
+- Databricks
+- advanced distributed processing
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License.
 
 ## Author
 
-**Georg Wiesmüller**  
-Business Informatics student focused on Data Engineering and the long-term intersection of data platforms, security, and AI governance.
+Georg Wiesmüller  
+Business Informatics student focused on Data Engineering and the long-term intersection of reliable data platforms, security and AI governance.
