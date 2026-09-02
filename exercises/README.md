@@ -1,22 +1,24 @@
 # Exercises
 
-Exercises are organized by competency block rather than by course day or video.
+Focused coding exercises and no-AI practice organized by the operational learning blocks.
 
 ```text
 exercises/
 ├── 00_setup_baseline/
-├── 01_fundamentals/
-├── 02_control_flow/
+├── 01_execution_variables_types_strings_numbers/
+├── 02_booleans_operators_conditions_loops/
 ├── 03_data_structures/
-├── 04_functions_modules/
-├── 05_files_json_csv/
-├── 06_errors_logging/
-├── 07_http_apis/
-├── 08_validation_transformation/
-├── 09_pandas/
-├── 10_postgresql/
-├── 11_parquet/
-└── 12_testing/
+├── 04_functions_modules_code_structure/
+├── 05_errors_exceptions_datetime_regex_debugging/
+├── 06_files_pathlib_json_csv_config/
+├── 07_http_rest_api_ingestion/
+├── 08_pandas_data_engineering/
+├── 09_data_quality_schema_validation/
+├── 10_postgresql_sql_parquet/
+├── 11_logging_typing_testing_configuration/
+└── 12_mini_pipeline_rehearsal/
 ```
 
-`00_setup_baseline/` contains the initial pre-learning exercises and baseline challenge. Later folders will be populated only when the corresponding learning block starts.
+The completed setup and baseline exercises remain in `00_setup_baseline/`. New exercises should be placed in the block that owns the concept being practiced.
+
+Theory belongs in [`../learnings/`](../learnings/), not in exercise scripts.
