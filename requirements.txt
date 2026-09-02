@@ -1,0 +1,4 @@
+# Project dependencies
+#
+# Learning Block 0 intentionally starts without third-party runtime packages.
+# Add dependencies only when a learning block introduces a real requirement.
