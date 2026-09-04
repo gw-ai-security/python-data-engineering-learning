@@ -1,8 +1,10 @@
 # Python Data Engineering Learning
 
-Hands-on learning repository for building reliable Python skills for Data Engineering.
+Evidence-driven learning repository for building reliable Python skills for Data Engineering.
 
-This repository is not designed around course completion. It is designed around demonstrable engineering competence: understanding, implementing, debugging, testing, explaining, and integrating Python into a reliable local data pipeline.
+This repository is not organized around course completion. It is organized around demonstrable engineering competence: understanding, implementing, debugging, testing, explaining and integrating Python into a reliable local data pipeline.
+
+> **Repository role:** learning + engineering evidence. This is not the final portfolio flagship yet. The Python phase culminates in an independently built local data pipeline and only later feeds the broader cloud-platform roadmap.
 
 ## Target outcome
 
@@ -56,6 +58,19 @@ Key rules:
 - separation of concerns in pipeline code;
 - GitHub evidence matters more than course certificates.
 
+## Current checkpoint — 2026-09-04
+
+The repository is currently in the **Python fundamentals** stage.
+
+| Block | Status | Evidence / remaining work |
+|---|---|---|
+| 0 – Setup & baseline | Operational | `.venv`, terminal execution, Git workflow and baseline exercises are implemented. Third-party dependency / requirements gate is intentionally deferred until the first real dependency is introduced. |
+| 1 – Variables, types, strings, numbers | Guided practice complete | 7 exercises cover normalization, slicing, casting, numeric operations, float precision, raw-record parsing and string validation. Independent no-AI gate is still to be recorded. |
+| 2 – Booleans, conditions, loops | In progress | 6 exercises cover validation rules, classification, `and/or/not`, multi-record filtering, structured rejection reasons, `break` and `continue`. `while`, `range`, boundary/off-by-one debugging and the independent gate remain. |
+| 3 – Data structures | Not started | Next major block after Block 2 is formally closed. |
+
+The detailed evidence ledger is maintained in [`docs/PROGRESS.md`](docs/PROGRESS.md).
+
 ## Repository structure
 
 ```text
@@ -64,6 +79,7 @@ python-data-engineering-learning/
 ├── docs/
 │   ├── COURSE_STRUCTURE.md
 │   ├── LEARNING_METHOD.md
+│   ├── PROGRESS.md
 │   └── SOURCE_MAP.md
 ├── learnings/
 │   ├── README.md
@@ -81,6 +97,10 @@ python-data-engineering-learning/
 │   ├── 11_logging_typing_testing_configuration.md
 │   └── 12_mini_pipeline_rehearsal.md
 ├── exercises/
+│   ├── 00_setup_baseline/
+│   ├── 01_execution_variables_types_strings_numbers/
+│   ├── 02_booleans_operators_conditions_loops/
+│   └── 03_data_structures/ ... 12_mini_pipeline_rehearsal/
 ├── mini_projects/
 ├── notes/
 ├── tests/
@@ -93,11 +113,11 @@ python-data-engineering-learning/
 ### What belongs where?
 
 - **`learnings/`** – concise theory, mental models, examples, code snippets and recall questions for every learning block.
-- **`exercises/`** – code written during focused practice and no-AI gates.
+- **`exercises/`** – learner-written code from focused practice and later no-AI gates.
 - **`mini_projects/`** – small integrated Data Engineering exercises.
 - **`tests/`** – automated tests as testing becomes part of the learning path.
-- **`notes/`** – personal confusion questions, debugging observations and short reflections.
-- **`docs/`** – course structure, learning method and source mapping.
+- **`notes/`** – confusion questions, debugging observations and short reflections.
+- **`docs/`** – course structure, learning method, source mapping and evidence-based progress tracking.
 
 ## Learning blocks
 
@@ -135,7 +155,7 @@ Locate and fix common failures systematically.
 **Level 4 – Reason / Operate**  
 Explain trade-offs, failure modes, security, tests, logging and operational consequences.
 
-For this Python phase, fundamentals and the pipeline core should reach mainly Levels 2–3.
+Progress labels in this repository distinguish **guided practice** from an **independent gate**. A block is not marked complete merely because the guided exercise set exists.
 
 ## Debugging workflow
 
@@ -151,12 +171,6 @@ OBSERVE
 
 For relevant bugs, record expected behavior, actual behavior, hypothesis, minimal reproduction, fix and verification. Add a regression test where useful.
 
-## Current status
-
-- Python 3.14 environment established with a project-local `.venv`.
-- Setup and baseline exercises completed.
-- Next phase: Block 1 – Python execution, variables, types, strings and numbers.
-
 ## Final project
 
 The final Python-phase project is the **Reliable Local Data Pipeline**:
@@ -165,7 +179,7 @@ The final Python-phase project is the **Reliable Local Data Pipeline**:
 API → Python → Validation → PostgreSQL + Parquet → Data Quality → Logging → Tests
 ```
 
-Before implementation, the project must define the problem, consumer, source, grain, valid record rules, business rules, expected failures and Definition of Done.
+Before implementation, the project must define the problem, consumer, source, grain, valid-record rules, business rules, expected failures and Definition of Done.
 
 ## Scope discipline
 
