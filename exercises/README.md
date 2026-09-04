@@ -54,18 +54,32 @@ Implemented:
 04_customer_validation_loop.py
 05_rejection_reasons.py
 06_loop_control.py
+07_range_and_boundaries.py
+08_while_loop.py
+09_debug_loop_conditions.py
+10_independent_gate.py
 ```
 
-Still required before the formal Block-2 gate is closed:
+**Status: Gate passed.**
 
-- `range` and off-by-one practice;
-- `while` and termination-condition practice;
-- explicit boundary-value debugging;
-- independent validation/rejection gate.
+Evidence now covers:
+
+- comparison and Boolean logic;
+- ordered `if / elif / else` classification;
+- independent validation rules with `and`, `or`, `not`;
+- multi-record `for` processing;
+- structured rejection reasons;
+- `break` and `continue`;
+- `range` and exclusive-stop/off-by-one behavior;
+- `while` and termination conditions;
+- explicit boundary/infinite-loop debugging;
+- independent five-rule accepted/rejected gate.
 
 ### `03_data_structures/`
 
-Planned next major block after Block 2 is formally closed.
+Next active block. Formal Block-3 exercise evidence has not yet been recorded.
+
+The first target is list reference/mutation behavior and copying, followed by tuples, sets, dictionary operations, nested structures and choosing the correct structure for a data problem.
 
 ## Exercise rules
 
