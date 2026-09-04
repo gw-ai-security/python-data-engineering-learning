@@ -75,7 +75,7 @@ Professional project environment, `.venv`, pip, requirements, Git, VS Code, proj
 Variables, `int`, `float`, `str`, `bool`, `None`, casting, string normalization, slicing, f-strings and numeric operations.
 
 ### Block 2 – Booleans, operators, conditions, loops
-Validation logic, comparisons, `and/or/not`, `if/elif/else`, `for`, `while`, `break`, `continue`, `range` and boundary conditions.
+Validation logic, comparisons, `and/or/not`, `if/elif/else`, `for`, `while`, `break`, `continue`, `range`, truthiness where practical and boundary conditions.
 
 ### Block 3 – Data structures
 Lists, tuples, sets, dictionaries, nested structures, membership, mutation, uniqueness and choosing the correct structure for a data problem.
@@ -117,7 +117,31 @@ A typical session follows:
 4. **Data Engineering transfer – ~20–30%**
 5. **Close – commit, confusion questions, debugging insight**
 
-## 5. Final phase gate
+## 5. Progress and gate semantics
+
+The roadmap separates exposure from competence. Therefore the repository uses these states:
+
+```text
+PLANNED
+→ GUIDED PRACTICE
+→ INDEPENDENT GATE
+→ INTEGRATED USE
+```
+
+A block is not considered complete merely because all guided exercise files exist. The defined gate must also be reproduced independently and explained/debugged.
+
+Current implementation evidence is tracked in [`PROGRESS.md`](PROGRESS.md).
+
+### Current checkpoint — 2026-09-04
+
+- **Block 0:** environment and baseline are operational; the third-party dependency / requirements checkpoint remains intentionally deferred until a real dependency is introduced.
+- **Block 1:** guided exercise set completed; independent normalization gate still needs to be recorded.
+- **Block 2:** validation, classification, `for`, structured rejection reasons, `break` and `continue` are implemented. `while`, `range`, boundary/off-by-one work and the independent validation gate remain.
+- **Block 3:** not yet started as a formal block.
+
+This status is intentionally stricter than a course-progress percentage.
+
+## 6. Final phase gate
 
 Before the portfolio project begins, the mini-pipeline must work without tutorial guidance and must be debuggable.
 
