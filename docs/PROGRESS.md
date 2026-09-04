@@ -74,7 +74,7 @@ Remaining gate:
 
 ### Block 2 – Booleans, operators, conditions, loops
 
-**Status:** In progress; major guided practice implemented, formal block gate not yet closed.
+**Status:** **Gate passed — 2026-09-04.**
 
 Implemented exercises:
 
@@ -86,7 +86,7 @@ Implemented exercises:
    - first-match behavior.
 3. `03_customer_eligibility.py`
    - membership checks;
-   - `and`, `or`, `not` concepts in business rules.
+   - `and`, `or`, `not` in business rules.
 4. `04_customer_validation_loop.py`
    - apply rules to multiple records;
    - accepted vs. rejected collections.
@@ -96,33 +96,68 @@ Implemented exercises:
 6. `06_loop_control.py`
    - `continue` skips one record;
    - `break` stops processing;
-   - special-case checks must precede broader overlapping conditions.
+   - specific stop conditions precede broader overlapping rules.
+7. `07_range_and_boundaries.py`
+   - `range(start, stop)` and exclusive stop semantics;
+   - inclusive business boundaries via `max_page + 1`;
+   - off-by-one awareness.
+8. `08_while_loop.py`
+   - state-controlled iteration;
+   - pagination-style loops;
+   - retry-style loops;
+   - explicit termination through state mutation.
+9. `09_debug_loop_conditions.py`
+   - boundary-condition debugging;
+   - infinite-loop root cause analysis;
+   - OBSERVE → HYPOTHESIZE → ISOLATE → TEST → FIX → VERIFY → PREVENT.
+10. `10_independent_gate.py`
+    - five independent validation rules;
+    - accepted/rejected split;
+    - all rejection reasons captured structurally;
+    - accepted/rejected counts;
+    - no function abstraction or step-by-step solution template.
 
-Remaining according to the operational learning plan:
+Independent gate evidence:
 
-- `range` and off-by-one behavior;
-- `while` and termination conditions;
-- boundary-value testing;
-- intentionally debug a wrong condition / off-by-one / loop-termination case;
-- independent no-AI gate: implement at least five validation rules and split records into accepted/rejected with explainable reasons.
+```text
+TX-001 → accepted
+TX-002 → rejected: amount <= 0
+TX-003 → rejected: country outside Austria/Germany
+TX-004 → rejected: inactive customer
+TX-005 → rejected: blocked customer
+```
+
+The gate demonstrates that the learner can independently:
+
+- translate business rules into named Boolean checks;
+- combine and invert conditions correctly;
+- use independent `if` statements when multiple reasons may coexist;
+- process a collection record by record;
+- store validation evidence in structured lists/dictionaries;
+- reason about `range` boundaries and `while` termination;
+- debug an off-by-one error and a non-terminating loop.
+
+Next competence step: reuse these control-flow skills inside Block 3 data-structure work and later integrated pipeline exercises.
 
 ### Block 3 – Data structures
 
-**Status:** Planned / next major block after Block 2 gate.
+**Status:** Next active block; formal exercise evidence not yet recorded.
 
 Target concepts:
 
-- list;
+- list mutation and copying/reference behavior;
 - tuple;
 - set;
-- dictionary;
+- dictionary operations;
 - nested structures;
 - membership;
-- mutation and copying;
+- mutability and copying;
 - uniqueness;
 - choosing a structure based on order, mutability, uniqueness and key/value access.
 
-Note: lists and dictionaries have already appeared in baseline and Block 2 exercises, but Block 3 is where their behavior and trade-offs are studied explicitly.
+Note: lists and dictionaries have already appeared in baseline and Block 2 exercises, but Block 3 studies their behavior and trade-offs explicitly.
+
+First planned exercise: understand why assigning one list variable to another does not create an independent copy, then implement a safe copy for the intended use case.
 
 ## Progress rule
 
