@@ -58,13 +58,22 @@ for record in records:
         total += score
 ```
 
+## Requirements-Strategie
+
+`requirements.txt` ist aktuell absichtlich ohne Third-Party-Runtime-Abhängigkeiten. Es werden keine Pakete nur für einen künstlichen Setup-Test hinzugefügt. Sobald ein späterer Block die erste echte Library benötigt, wird sie im aktiven `.venv` installiert und reproduzierbar im Requirements-Workflow dokumentiert.
+
+Das bedeutet: Die Umgebung ist praktisch einsatzbereit, der strikte Lernplan-Punkt „Paket installieren / requirements erzeugen“ wird jedoch erst beim ersten realen Dependency-Use-Case vollständig evidenziert.
+
 ## Recall
 
 - Warum verwenden wir ein `venv`?
 - Woran erkennst du, welches pip gerade aktiv ist?
 - Warum darf `.env` nicht committed werden?
 - Was war der Zweck der Baseline?
+- Warum ist ein absichtlich leeres `requirements.txt` besser als künstliche Dependencies?
 
 ## Gate
 
-Umgebung selbst erstellen, aktivieren, Script aus Terminal starten, requirements verwalten und den Zweck von Dependency Isolation erklären.
+Umgebung selbst erstellen, aktivieren, Script aus Terminal starten, eine echte Projektdependency im `.venv` installieren und reproduzierbar dokumentieren sowie den Zweck von Dependency Isolation erklären.
+
+**Aktueller Status:** Umgebung und Baseline operational; der reale Dependency-/Requirements-Checkpoint wird beim ersten tatsächlich benötigten Third-Party-Paket abgeschlossen.

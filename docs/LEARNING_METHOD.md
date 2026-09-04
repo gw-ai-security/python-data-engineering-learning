@@ -25,6 +25,20 @@ Good AI uses: code review, edge cases, test ideas, refactoring, stack-trace expl
 
 Bad default: task → AI → copy code → assume understanding.
 
+## Evidence states
+
+Repository progress uses explicit evidence states:
+
+- **Planned** – the topic exists in the roadmap.
+- **Guided practice** – the concept has been implemented with tutor/reviewer support.
+- **Independent gate pending** – guided exercises exist, but independent reproduction has not yet been recorded.
+- **Gate passed** – the defined task can be implemented, explained and debugged without step-by-step help.
+- **Integrated** – the skill is reused inside a larger mini-project or pipeline.
+
+This distinction is important because successful guided code is evidence of progress, but not yet proof of independent competence.
+
+The current evidence ledger is [`PROGRESS.md`](PROGRESS.md).
+
 ## Confusion Compass
 
 Turn vague confusion into a precise question.
@@ -57,6 +71,8 @@ For meaningful bugs:
 - fix;
 - verification;
 - regression test where useful.
+
+Debugging evidence matters. A corrected program is more valuable when the learner can explain what failed, why the hypothesis was plausible and how the fix was verified.
 
 ## Concept first, tool second
 
@@ -93,3 +109,5 @@ Avoid one function that downloads an API response, cleans it, applies business r
 - **Level 4 – Reason / Operate**
 
 Fundamentals and pipeline-core topics should mainly reach Levels 2–3 in this phase.
+
+A block should only be described as complete when its gate is supported by actual repository evidence, not merely by a completed video section or guided exercise count.
