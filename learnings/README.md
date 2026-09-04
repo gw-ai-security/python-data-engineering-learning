@@ -34,8 +34,8 @@ Die Learnings beschreiben nicht automatisch den erreichten Kompetenzstand. Der t
 ## Aktueller Lernstand — 2026-09-04
 
 - Block 0: Umgebung und Baseline praktisch umgesetzt; Dependency-/Requirements-Gate wird beim ersten echten Third-Party-Paket vervollständigt.
-- Block 1: Guided Practice abgeschlossen; unabhängiger Gate-Nachweis steht noch aus.
-- Block 2: Kernübungen bis `break` / `continue` umgesetzt; `range`, `while`, Boundary-/Off-by-one-Debugging und unabhängiger Gate-Nachweis stehen noch aus.
-- Block 3: formal noch nicht begonnen.
+- Block 1: Guided Practice abgeschlossen; unabhängiger Normalisierungs-Gate-Nachweis steht noch aus.
+- Block 2: **Gate bestanden.** Bedingungen, Validierungslogik, `for`, `break`, `continue`, `range`, `while`, Boundary-/Off-by-one-Debugging und der unabhängige fünf-Regeln-Gate sind dokumentiert.
+- Block 3: nächster aktiver Block; formale Übungsevidenz beginnt mit Mutation, Referenzen und Copying.
 
 Diese Dateien sind kein Ersatz für Coding. Sie dienen zum Nachlesen, Recall und zur Erklärung, **warum** ein Konzept gebraucht wird.

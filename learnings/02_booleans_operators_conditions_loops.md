@@ -166,6 +166,16 @@ while page <= 3:
     page += 1
 ```
 
+Mental Model:
+
+```text
+INITIAL STATE
+→ CHECK CONDITION
+→ DO WORK
+→ CHANGE STATE
+→ CHECK AGAIN
+```
+
 `while` ist besonders relevant, wenn nicht eine bekannte Collection durchlaufen wird, sondern eine Abbruchbedingung den Ablauf steuert, etwa Pagination oder Retry-Logik.
 
 Risiko: Wenn die Bedingung nie `False` wird, entsteht eine Endlosschleife.
@@ -187,7 +197,14 @@ Ausgabe:
 2
 ```
 
-Das Stop-Ende ist exklusiv. Genau daraus entstehen typische Off-by-one-Fehler.
+Das Stop-Ende ist exklusiv. Für eine inklusive fachliche Obergrenze wird deshalb häufig `max_value + 1` benötigt:
+
+```python
+for page in range(1, max_page + 1):
+    print(page)
+```
+
+Genau daraus entstehen typische Off-by-one-Fehler.
 
 ## Boundary Values
 
@@ -209,6 +226,29 @@ sind mindestens diese Fälle interessant:
 
 Für `revenue >= 1000` entsprechend `999`, `1000`, `1001`.
 
+Bei Schleifen gilt dieselbe Denkweise: Prüfe explizit den ersten und letzten gewünschten Wert sowie den ersten Wert außerhalb des gültigen Bereichs.
+
+## Debugging von Schleifenbedingungen
+
+Das verwendete Protokoll lautet:
+
+```text
+OBSERVE
+→ HYPOTHESIZE
+→ ISOLATE
+→ TEST
+→ FIX
+→ VERIFY
+→ PREVENT
+```
+
+Wichtig: `OBSERVE` beschreibt zunächst nur das tatsächliche Verhalten. Die vermutete Ursache gehört erst in `HYPOTHESIZE`.
+
+Zwei typische Fehlerbilder dieses Blocks:
+
+- `page < max_page` statt `page <= max_page` → obere Boundary wird nicht verarbeitet;
+- fehlendes `attempt += 1` in einer `while`-Schleife → Zustand verändert sich nicht, Schleife terminiert nicht.
+
 ## Data-Engineering-Transfer
 
 - Validierungsregeln als Booleans modellieren
@@ -219,27 +259,26 @@ Für `revenue >= 1000` entsprechend `999`, `1000`, `1001`.
 - ungültige Rows überspringen
 - kritische Stop-Bedingungen erkennen
 - Pagination / kontrollierte Wiederholung mit `while`
+- Retry-Zähler sicher terminieren
+- `range`-Grenzen für Pages, Batches oder Partitionen korrekt setzen
 - Boundary Values und Off-by-one-Fälle prüfen
 
 ## Praktische Evidenz im Repository
 
-Aktuell implementiert:
+Implementiert:
 
-1. Transaction validation
-2. Transaction classification
-3. Customer eligibility
-4. Multi-record customer validation loop
-5. Structured rejection reasons
-6. Loop control with `break` / `continue`
+1. `01_transaction_validation.py`
+2. `02_transaction_classification.py`
+3. `03_customer_eligibility.py`
+4. `04_customer_validation_loop.py`
+5. `05_rejection_reasons.py`
+6. `06_loop_control.py`
+7. `07_range_and_boundaries.py`
+8. `08_while_loop.py`
+9. `09_debug_loop_conditions.py`
+10. `10_independent_gate.py`
 
-Siehe `exercises/02_booleans_operators_conditions_loops/`.
-
-Noch nicht als Übung dokumentiert:
-
-- `range` / Off-by-one;
-- `while` / termination conditions;
-- gezieltes Boundary-Value-Debugging;
-- unabhängiger No-AI-Gate-Nachweis.
+Der Independent Gate kombiniert fünf Business Rules, Record-by-Record-Verarbeitung, accepted/rejected Collections, strukturierte Rejection Reasons und Count-Ausgaben ohne Funktionsabstraktion oder Schritt-für-Schritt-Lösungsvorlage.
 
 ## Typische Fehler
 
@@ -264,9 +303,10 @@ Noch nicht als Übung dokumentiert:
 - Warum muss eine Business Rule getrennt von ihrer Syntax beurteilt werden?
 - Wie teste ich Boundary Values?
 - Warum ist das Stop-Ende von `range` eine typische Fehlerquelle?
+- Welche State-Änderung sorgt dafür, dass eine `while`-Schleife terminiert?
 
 ## Gate
 
 Mindestens fünf Validierungsregeln ohne Schritt-für-Schritt-Vorlage implementieren, Records nachvollziehbar in valid/rejected aufteilen, Rejection Reasons erzeugen und typische Boundary-/Loop-Fehler selbst debuggen.
 
-**Aktueller Status:** In progress. Der Kern mit `for`, Bedingungen, Validierungslogik und Loop Control ist praktisch umgesetzt; `while`, `range`, Boundary-Debugging und der unabhängige Gate-Nachweis fehlen noch.
+**Status: Gate passed on 2026-09-04.**

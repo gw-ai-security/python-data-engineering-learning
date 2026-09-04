@@ -136,8 +136,8 @@ Current implementation evidence is tracked in [`PROGRESS.md`](PROGRESS.md).
 
 - **Block 0:** environment and baseline are operational; the third-party dependency / requirements checkpoint remains intentionally deferred until a real dependency is introduced.
 - **Block 1:** guided exercise set completed; independent normalization gate still needs to be recorded.
-- **Block 2:** validation, classification, `for`, structured rejection reasons, `break` and `continue` are implemented. `while`, `range`, boundary/off-by-one work and the independent validation gate remain.
-- **Block 3:** not yet started as a formal block.
+- **Block 2:** **gate passed**. Validation, classification, structured rejection reasons, `break`, `continue`, `range`, `while`, boundary/off-by-one debugging and the independent five-rule validation gate are all recorded in the repository.
+- **Block 3:** next active learning block. Formal evidence starts with mutation/reference/copying behavior before moving through tuples, sets, dictionaries and nested structures.
 
 This status is intentionally stricter than a course-progress percentage.
 
