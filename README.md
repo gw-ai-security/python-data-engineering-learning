@@ -65,9 +65,9 @@ The repository is currently in the **Python fundamentals** stage.
 | Block | Status | Evidence / remaining work |
 |---|---|---|
 | 0 – Setup & baseline | Operational | `.venv`, terminal execution, Git workflow and baseline exercises are implemented. Third-party dependency / requirements gate is intentionally deferred until the first real dependency is introduced. |
-| 1 – Variables, types, strings, numbers | Guided practice complete | 7 exercises cover normalization, slicing, casting, numeric operations, float precision, raw-record parsing and string validation. Independent no-AI gate is still to be recorded. |
-| 2 – Booleans, conditions, loops | In progress | 6 exercises cover validation rules, classification, `and/or/not`, multi-record filtering, structured rejection reasons, `break` and `continue`. `while`, `range`, boundary/off-by-one debugging and the independent gate remain. |
-| 3 – Data structures | Not started | Next major block after Block 2 is formally closed. |
+| 1 – Variables, types, strings, numbers | Guided practice complete | 7 exercises cover normalization, slicing, casting, numeric operations, float precision, raw-record parsing and string validation. Independent no-AI normalization gate is still to be recorded. |
+| 2 – Booleans, conditions, loops | **Gate passed** | 10 exercises now cover validation, classification, `and/or/not`, multi-record filtering, structured rejection reasons, `break`, `continue`, `range`, `while`, boundary/off-by-one debugging and an independent five-rule validation gate. |
+| 3 – Data structures | Next active block | Lists and dictionaries have already been used in prior exercises; formal study now moves to mutation/copying, tuples, sets, nested structures and structure-selection trade-offs. |
 
 The detailed evidence ledger is maintained in [`docs/PROGRESS.md`](docs/PROGRESS.md).
 
