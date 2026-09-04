@@ -13,6 +13,8 @@ Jeder Block enthält:
 - **Recall-Fragen**
 - **Gate / Definition of Done**
 
+Die Learnings beschreiben nicht automatisch den erreichten Kompetenzstand. Der tatsächliche Implementierungs- und Gate-Status wird separat in [`../docs/PROGRESS.md`](../docs/PROGRESS.md) geführt.
+
 ## Reihenfolge
 
 1. [00 – Setup & Baseline](00_setup_baseline.md)
@@ -28,5 +30,12 @@ Jeder Block enthält:
 11. [10 – PostgreSQL, SQL & Parquet](10_postgresql_sql_parquet.md)
 12. [11 – Logging, Typing, Testing, Configuration](11_logging_typing_testing_configuration.md)
 13. [12 – Mini-Pipeline Rehearsal](12_mini_pipeline_rehearsal.md)
+
+## Aktueller Lernstand — 2026-09-04
+
+- Block 0: Umgebung und Baseline praktisch umgesetzt; Dependency-/Requirements-Gate wird beim ersten echten Third-Party-Paket vervollständigt.
+- Block 1: Guided Practice abgeschlossen; unabhängiger Gate-Nachweis steht noch aus.
+- Block 2: Kernübungen bis `break` / `continue` umgesetzt; `range`, `while`, Boundary-/Off-by-one-Debugging und unabhängiger Gate-Nachweis stehen noch aus.
+- Block 3: formal noch nicht begonnen.
 
 Diese Dateien sind kein Ersatz für Coding. Sie dienen zum Nachlesen, Recall und zur Erklärung, **warum** ein Konzept gebraucht wird.
